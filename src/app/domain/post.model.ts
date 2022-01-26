@@ -4,3 +4,7 @@ export class Post {
   title?: string;
   body?: string;
 }
+
+export class Posts {
+  posts?: Post[];
+}

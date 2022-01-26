@@ -1,8 +1,7 @@
-import {ChangeDetectorRef, Component} from '@angular/core';
-import {PostsService} from "./services/posts/posts.service";
-import {PostsStateService} from "./services/posts-state/posts-state.service";
+import {Component} from '@angular/core';
 import {Post} from "./domain/post.model";
 import {Observable} from "rxjs";
+import {PostsService} from "./services/posts/posts.service";
 
 @Component({
   selector: 'app-root',
@@ -10,9 +9,8 @@ import {Observable} from "rxjs";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  posts$: Observable<Post[]> = this.postsStateService.posts$;
+  posts$: Observable<Post[] | undefined> = this.postsService.posts$
 
-  constructor(private postsService: PostsService, private postsStateService: PostsStateService, private cdr: ChangeDetectorRef) {
-    this.postsService.getPosts().subscribe(posts => this.postsStateService.updatePosts(posts));
+  constructor(private postsService: PostsService) {
   }
 }

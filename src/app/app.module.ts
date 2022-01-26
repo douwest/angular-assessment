@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {PostComponent} from './components/post/post.component';
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {FlexLayoutModule} from "@angular/flex-layout";
@@ -26,7 +26,6 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     BrowserAnimationsModule,
     MatTooltipModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
