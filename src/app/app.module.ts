@@ -6,10 +6,10 @@ import {PostComponent} from './components/post/post.component';
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from "@angular/material/card";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -17,14 +17,14 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     PostComponent
   ],
   imports: [
-    MatCardModule,
     MatToolbarModule,
     MatButtonModule,
     FlexLayoutModule,
     BrowserModule,
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,4 +8,9 @@ import {Post} from "../../domain/post.model";
 })
 export class PostComponent {
   @Input() post?: Post;
+  displayUserId: boolean = false;
+
+  toggleId() {
+    this.displayUserId = !this.displayUserId;
+  }
 }
