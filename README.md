@@ -37,7 +37,7 @@ can be mitigated by validating and filtering (sanitizing) the request server-sid
 
 2. A malicious user could disguise elements with transparent layers to trick users into clicking html elements that have different behaviours than
 the visible element the user wished to navigate to / use. Adding a Content Security Policy so the browser only trusts scripts from domains you tell it to trust,
-   is a way to mitigate this risk. (source: https://owasp.org/www-community/attacks/Clickjacking)
+   is a way to mitigate this risk. CSP can also be used as a defensive layer for XSS (mentioned in 1) (source: https://owasp.org/www-community/attacks/Clickjacking)
    
 # 3. Differences between mutable and immutable objects
 A mutable object is an object of which we can modify the properties. An immutable object makes it impossible to change the contents
