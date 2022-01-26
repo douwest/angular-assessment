@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { PostsService } from './posts.service';
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
-import {Post} from "../domain/post.model";
+import {Post} from "../../domain/post.model";
 
 describe('PostsService', () => {
   let service: PostsService;

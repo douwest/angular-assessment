@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {PostsService} from "./services/posts.service";
+import {PostsService} from "./services/posts/posts.service";
 import {of} from "rxjs";
 import {Post} from "./domain/post.model";
 import {HttpClientTestingModule} from "@angular/common/http/testing";

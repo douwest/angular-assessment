@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {ChangeDetectorRef, Component} from '@angular/core';
+import {PostsService} from "./services/posts/posts.service";
+import {PostsStateService} from "./services/posts-state/posts-state.service";
 import {Post} from "./domain/post.model";
 import {Observable} from "rxjs";
-import {PostsService} from "./services/posts.service";
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,9 @@ import {PostsService} from "./services/posts.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-assessment';
-  posts?: Observable<Post[]>;
+  posts$: Observable<Post[]> = this.postsStateService.posts$;
 
-  constructor(private postsService: PostsService) {
-    this.posts = this.postsService.getPosts();
+  constructor(private postsService: PostsService, private postsStateService: PostsStateService, private cdr: ChangeDetectorRef) {
+    this.postsService.getPosts().subscribe(posts => this.postsStateService.updatePosts(posts));
   }
 }
