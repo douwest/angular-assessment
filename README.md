@@ -7,7 +7,8 @@ using the httpclient, and never subscribe to the observable so I do not have to 
 purpose, I want to use the async pipe whenever possible in combination with an Observable so my subscription is managed for me.
 
 I did not complete the RXJS reactive state bonus part completely, I started and got some way there,
-but got stuck on an error in the dev console and decided I spent enough time on the assessment (6 hrs).
+but got stuck when trying to retrieve the state from my custom state service. I could update it, and when logging
+the correct values came out, but somewhere I missed something that made the data not end up in the component.
 It is available under the branch `reactive-state`, if you are curious what I did there.
 
 Thank you for taking the time to review my assessment!
