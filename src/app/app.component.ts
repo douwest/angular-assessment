@@ -10,9 +10,9 @@ import {PostsService} from "./services/posts.service";
 })
 export class AppComponent {
   title = 'angular-assessment';
-  posts?: Observable<Post[]>;
+  posts$?: Observable<Post[]>;
 
   constructor(private postsService: PostsService) {
-    this.posts = this.postsService.getPosts();
+    this.posts$ = this.postsService.getPosts();
   }
 }

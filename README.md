@@ -1,9 +1,20 @@
 # AngularAssessment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4, Typescript 4.5.5.
+I used Angular Material to reduce some boilerplate for the styling. Furthermore, I wrote unit tests for my code in the master branch,
+I chose to display the title of the post as a hover action, to make the square buttons look nice. I retrieve the posts
+using the httpclient, and never subscribe to the observable so I do not have to manage that subscription. I did that on 
+purpose, I want to use the async pipe whenever possible in combination with an Observable so my subscription is managed for me.
 
-It is made as an assessment assignment. Before using the development server, be sure to run `npm install`, to install
-the required dependencies.
+I did not complete the RXJS reactive state bonus part completely, I started and got some way there, 
+but got stuck on an error in the dev console and decided I spent enough time on the assessment (6 hrs). 
+It is available under the branch `reactive-state`, if you are curious what I did there. 
+
+Thank you for taking the time to review my assessment! 
+
+## Installing dependencies
+
+Run `npm install` to install the required dependencies.
 
 ## Development server
 
@@ -15,7 +26,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` or `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Generic questions
 
