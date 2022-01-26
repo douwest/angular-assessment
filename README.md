@@ -21,7 +21,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Generic questions
 
 # 1. JWT
-The reason the provided JWT-token is not secure is that the email-address of the user is available in the token as the subject in plain text. Which poses a privacy
+One reason the provided JWT-token is not secure is that the email-address of the user is available in the token as the subject in plain text. Which poses a privacy
 issue if someone gets their hands on the token and decides to decode it, they find sensitive information within it. Of course if someone gets your token
 you have another (probably larger) problem as well, but I don't think that's what this question was about. As an identifier within the token, it might be a better idea
 to use a unique identifier that does not provide sensitive information, instead of using the email-address.
@@ -29,13 +29,16 @@ to use a unique identifier that does not provide sensitive information, instead 
 Another issue I found out when modifying the contents of the token at jwt.io is that I can toggle the admin field to true, and 
 the signature is verified afterwards. This no good. The initial token has an invalid signature, there is a typo (a 'b' before the signature) in it.
 
-Checked by pasting the token into the token parser on jwt.io.
+# 2. Security issues when sending messages that contain HTML
+1. A malicious user could intercept and modify the contents of the html. We should never trust the user input. They might
+   inject malicious code (xss) into the template. This
+can be mitigated by validating and filtering (sanitizing) the request server-side, for which there exist libraries and tools. Although there are a lot of creative ways to tamper with the template
+   to get some code to run, via images, iframes, script tags, and more.
 
-# 2. Security issues when sending HTML
-1.
-
-2.
-
+2. A malicious user could disguise elements with transparent layers to trick users into clicking html elements that have different behaviours than
+the visible element the user wished to navigate to / use. Adding a Content Security Policy so the browser only trusts scripts from domains you tell it to trust,
+   is a way to mitigate this risk. (source: https://owasp.org/www-community/attacks/Clickjacking)
+   
 # 3. Differences between mutable and immutable objects
 A mutable object is an object of which we can modify the properties. An immutable object makes it impossible to change the contents
 of the object after creation. Immutability helps us not to change the original value and contents after declaration.
@@ -98,4 +101,8 @@ Identifying problems with load times can be tested and analyzed using Chrome Dev
 and test our web-app on different devices.
 
 # 5. Job workspace priority
-A.
+It depends on the context of the work, but in general I would choose A. Not because I want a very fast piece of hardware,
+but because when working in a team with others, I find it to be useful when we all use similar environments, IDE's etc. 
+
+This makes communicating easier within the team when helping each other out. Something can however also be said about using
+the software that you are most familiar with.
