@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PostComponent } from './post.component';
+import {PostComponent} from './post.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 describe('PostComponent', () => {
   let component: PostComponent;
@@ -8,9 +9,10 @@ describe('PostComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostComponent ]
+      imports: [MatTooltipModule],
+      declarations: [PostComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +23,12 @@ describe('PostComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should toggle displayUserId when toggleId is called', () => {
+    component.toggleId();
+    expect(component.displayUserId).toEqual(true);
+    component.toggleId();
+    expect(component.displayUserId).toEqual(false);
   });
 });

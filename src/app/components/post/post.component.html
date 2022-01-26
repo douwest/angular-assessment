@@ -1,5 +1,5 @@
 <button mat-raised-button class="square mat-elevation-z5" matTooltip="{{post?.title}}" (click)="toggleId()">
   <p>{{displayUserId ? 'user' : 'post'}}</p>
-  <h1 class="font-size-xl">{{displayUserId ? post?.userId : post?.id}}</h1>
+  <p class="font-size-xl">{{displayUserId ? post?.userId : post?.id}}</p>
 </button>
 
